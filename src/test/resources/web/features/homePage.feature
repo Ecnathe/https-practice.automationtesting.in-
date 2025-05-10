@@ -1,13 +1,13 @@
-@Home
+@HomePage
 Feature: Home page
 
   Background:
     Given Se ingresa a la web de practica
 
-  @Slider
+  @Slider @Smoke
   Scenario: Validar que solo haya 3 sliders unicamente en home page
     Then Se valida que solo haya '3' sliders
 
-  @Arrivals @Do
+  @Arrivals @Smoke
   Scenario: Validar que solo haya 3 Arrivals unicamente en home page
     Then Se valida que solo haya '3' arrivals
