@@ -17,6 +17,6 @@ public class HomeService {
         Assert.assertEquals(WebActionManager.getElements(PracticeHomeConstants.CONTAINER_SLIDERS).size(),qSliders,"La cantidad de Slider no coincide con la esperada");
     }
     public static void checkarrivals(int qArrivals) {
-        Assert.assertEquals(WebActionManager.getElements(PracticeHomeConstants.CONTAINER_ARRIVALS).size(),qArrivals);
+        Assert.assertEquals(WebActionManager.getElements(PracticeHomeConstants.CONTAINER_ARRIVALS).size(),qArrivals,"La cantidad de Arrivals no coincide con la esperada");
     }
 }

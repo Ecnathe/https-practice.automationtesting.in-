@@ -8,6 +8,10 @@ Feature: Home page
   Scenario: Validar que solo haya 3 sliders unicamente en home page
     Then Se valida que solo haya '3' sliders
 
-  @Arrivals @Smoke
+  @Arrivals @Smoke @Do
   Scenario: Validar que solo haya 3 Arrivals unicamente en home page
     Then Se valida que solo haya '3' arrivals
+
+  Scenario: Validar que las imagenes de Arrivals sean navegables
+    When
+
