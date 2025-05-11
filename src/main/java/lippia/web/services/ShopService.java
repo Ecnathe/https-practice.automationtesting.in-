@@ -3,7 +3,7 @@ package lippia.web.services;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import org.testng.Assert;
-import lippia.web.constants.ShopConstants;
+import static lippia.web.constants.ShopConstants.*;
 
 public class ShopService {
 
