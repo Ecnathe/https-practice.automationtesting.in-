@@ -1,11 +1,8 @@
 package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
-import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.*;
 import lippia.web.services.HomeService;
-
-import static lippia.web.constants.PracticeHomeConstants.ARRIVAL_IMAGE;
 
 public class HomeSteps extends PageSteps {
 
