@@ -4,7 +4,6 @@ import com.crowdar.core.PropertyManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.HomeConstants;
 import org.testng.Assert;
-
 import static com.crowdar.core.actions.ActionManager.getText;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 import static lippia.web.constants.HomeConstants.*;

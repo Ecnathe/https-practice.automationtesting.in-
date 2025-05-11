@@ -2,10 +2,8 @@ package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
-import static java.sql.DriverManager.getDriver;
+import lippia.web.constants.ShopConstants;
 
 public class ShopService {
 
