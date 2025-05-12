@@ -5,16 +5,16 @@ Feature: Shop
     Given Se ingresa a la web de practica
     And Se clickea el boton 'Shop' en la barra de navegacion superior
 
-  @CategoryFilter @Smoke
+  @CategoryFilter @Smoke @Do
   Scenario Outline: Filtrar por categoria <CatFilt>
-    When Se clickea en '<CatFilt>'
-    Then Solo se visualizan los productos de dicha categoria
+    When Se hace click en <CatFilt> del sidebar
+    Then Solo se visualizan los productos de la categoria <CatFilt>
     Examples:
       | CatFilt    |
       | Android    |
       | HTML       |
       | JavaScript |
-      | Selenium   |
+      | selenium   |
 
   @SortBy @Smoke
   Scenario Outline: Validar filtro por <Filtro>

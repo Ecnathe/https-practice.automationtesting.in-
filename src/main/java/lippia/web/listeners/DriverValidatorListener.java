@@ -31,5 +31,4 @@ public class DriverValidatorListener extends AbstractWebDriverEventListener {
         }
         isValidating = false;
     }
-
 }
