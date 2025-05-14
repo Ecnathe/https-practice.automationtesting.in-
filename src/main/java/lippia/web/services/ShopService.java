@@ -24,4 +24,12 @@ public class ShopService {
             }
         }
     }
+    public static void clickSortProductsDropDow (String sorted){
+        WebActionManager.waitClickable(ShopConstants.DROP_DOWN_SORT).click();
+        WebActionManager.waitVisibility(ShopConstants.DROP_DOWN_OPTION, sorted).click();
+    }
+
+    public static void filteredProducts (){
+
+    }
 }

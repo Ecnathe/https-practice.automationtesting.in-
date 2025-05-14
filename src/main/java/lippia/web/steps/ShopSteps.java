@@ -24,4 +24,9 @@ public class ShopSteps extends PageSteps {
     public void productosFiltrados(String category) {
         ShopService.validateCategoryProducts(category);
     }
+
+    @When("Se selecciona la opcion (.*) en el menu depslegable$")
+    public void sortedProducts(String sorted) {
+        ShopService.clickSortProductsDropDow(sorted);
+    }
 }
