@@ -16,7 +16,7 @@ Feature: Shop
       | JavaScript |
       | selenium   |
 
-  @SortBy @Smoke @Do
+  @SortBy @Smoke
   Scenario Outline: Validar filtro por <Filtro>
     When Se selecciona la opcion <Parametro> en el menu depslegable
     Then Se visualizan los productos filtrados
@@ -28,7 +28,7 @@ Feature: Shop
       | Sort by Low to High Item | price      |
       | Sort by High to Low Item | price-desc |
 
-  @OnSale @Smoke
+  @OnSale @Smoke @Do
   Scenario: Validar descuento realizado en productos con la etiqueta 'On Sale'
-    When Se clickea un producto con la etiqueta 'On Sale'
+    When Se clickea el primer producto con la etiqueta On Sale
     Then Se visualiza el precio antiguo tachado para los productos con esta etiqueta
