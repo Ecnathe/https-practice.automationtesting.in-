@@ -1,14 +1,13 @@
 package lippia.web.services;
-
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.ShopConstants;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.util.List;
 
 public class ShopService {
+
+    public static List <WebElement> defaultList;
 
     public static void clickOnCategory(String category) {
         WebActionManager.waitClickable(ShopConstants.PRODUCT_CATEGORY, category).click();
@@ -24,12 +23,14 @@ public class ShopService {
             }
         }
     }
-    public static void clickSortProductsDropDow (String sorted){
+    public static void clickSortProductsDropDown (String sorted){
+        defaultList = WebActionManager.getElements(ShopConstants.ITEM_CARDS);
         WebActionManager.waitClickable(ShopConstants.DROP_DOWN_SORT).click();
         WebActionManager.waitVisibility(ShopConstants.DROP_DOWN_OPTION, sorted).click();
     }
 
-    public static void filteredProducts (){
-
+    public static void compareList (){
+        List<WebElement> sortedList = WebActionManager.getElements(ShopConstants.ITEM_CARDS);
+        Assert.assertNotEquals(defaultList, sortedList, "Las listas son identicas");
     }
 }

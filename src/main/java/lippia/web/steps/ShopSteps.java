@@ -27,6 +27,11 @@ public class ShopSteps extends PageSteps {
 
     @When("Se selecciona la opcion (.*) en el menu depslegable$")
     public void sortedProducts(String sorted) {
-        ShopService.clickSortProductsDropDow(sorted);
+        ShopService.clickSortProductsDropDown(sorted);
+    }
+
+    @Then("Se visualizan los productos filtrados")
+    public void verifiedSortedProducts() {
+        ShopService.compareList();
     }
 }
