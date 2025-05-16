@@ -27,4 +27,9 @@ public class LoginSteps extends PageSteps {
     public void redirectToDashboard() {
         LoginService.redirectedToDashboard();
     }
+
+    @Then("Se debe mostrar el mensaje de error correspondiente.")
+    public void displayErrorMessage() {
+        LoginService.showErrorMessage();
+    }
 }

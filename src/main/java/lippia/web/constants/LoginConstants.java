@@ -5,4 +5,5 @@ public class LoginConstants {
     public static final String LOGIN_USERNAME_BOX ="xpath://Input[@id='username']";
     public static final String LOGIN_PASSWORD_BOX ="xpath://Input[@id='password']";
     public static final String LOGIN_BUTTON = "xpath://input[@value='Login']";
+    public static final String LOGIN_ERROR_MESSAGE = "xpath://ul[@class='woocommerce-error']";
     }
