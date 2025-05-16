@@ -28,7 +28,7 @@ Feature: Shop
       | Sort by Low to High Item | price      |
       | Sort by High to Low Item | price-desc |
 
-  @OnSale @Smoke @Do
+  @OnSale @Smoke
   Scenario: Validar descuento realizado en productos con la etiqueta 'On Sale'
     When Se clickea el primer producto con la etiqueta On Sale
     Then Se visualiza el precio antiguo tachado para los productos con esta etiqueta
