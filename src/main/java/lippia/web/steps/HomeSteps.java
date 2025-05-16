@@ -13,11 +13,22 @@ public class HomeSteps extends PageSteps {
 
     @Then("Se valida que solo haya '(.*)' sliders")
     public void CheckCantidadSliders(int qSliders) {
-        HomeService.checksliders(qSliders);
+        HomeService.checkSliders(qSliders);
     }
 
     @Then("Se valida que solo haya '(.*)' arrivals")
     public void CheckCantidadArrivals(int qArrivals) {
-        HomeService.checkarrivals(qArrivals);
+        HomeService.checkArrivals(qArrivals);
+    }
+
+    @When("Se clickea la imagen del arrival en la posicion '(.*)'")
+    public void ClickArrivalsImage(String position) {
+        HomeService.getArrivalTitle(position);
+        HomeService.selectArrivals(position);
+    }
+
+    @Then("Se visualizan los detalles producto seleccionado")
+    public void ValidarDetalleProducto() {
+        HomeService.productPageTitleValidate();
     }
 }

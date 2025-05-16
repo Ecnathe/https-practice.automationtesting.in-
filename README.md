@@ -112,7 +112,7 @@ This sample project includes the required components as binaries, docker contain
 
            |                                   Command                                              |                        Description                             |
            |----------------------------------------------------------------------------------------|----------------------------------------------------------------|
-           | clean test -DforkCount=0                                                               | In case you need to debug, for use in the IDE runner           |
+           | clean test                                                                 | In case you need to debug, for use in the IDE runner           |
            | mvn clean test -DforkCount=0  "-Dcucumber.tags=@Smoke"                                 | Specifying a tag and including the debug option                |
            | mvn clean test -Pparallel -PchromeHeadless -Plocal                                     | Multiple profiles enabled                                      |
            | mvn clean test -PLocal -PchromeHeadless "-Dcucumber.tags=@Accounts and @Regression"    | Multiple tags and profiles enabled                             |
