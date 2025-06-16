@@ -11,7 +11,7 @@ Feature: Login
     When Se hace click en el boton Login
     Then Redirige al usuario al Dashboard
 
-  @LoginFallido @Smoke @Do
+  @LoginFallido @Smoke
   Scenario Outline: Login con credenciales invalidas por <credenciales>
     And En el campo Username se ingresa el valor '<user>' y en el campo Password el valor '<pass>'
     When Se hace click en el boton Login
