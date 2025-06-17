@@ -24,3 +24,17 @@ Feature: Login
       |                     | P3drQPez1 | Mail vacio y Pass correcta |
       |                     |           | Mail y Pass vacio          |
       | Pedro.pez@gmail.com | p3drQPez1 | Case sensitive             |
+
+  @loginCaseSensitive @Smoke
+  Scenario: Validación Case sensitive en Login
+    And En el campo Username se ingresa el valor 'Pedro.pez@gmail.com' y en el campo Password el valor 'p3drQPez1'
+    When Se hace click en el boton Login
+    Then Se debe mostrar el mensaje de error correspondiente.
+
+  @logOff @Smoke @Do
+  Scenario: Cerrar sesion
+    And En el campo Username se ingresa el valor 'pedro.pez@gmail.com' y en el campo Password el valor 'P3drQPez1'
+    And Se hace click en el boton Login
+    And Redirige al usuario al Dashboard
+    When Se clickea en Logout
+    Then Se redirige al usuario a la pantalla de login o registro

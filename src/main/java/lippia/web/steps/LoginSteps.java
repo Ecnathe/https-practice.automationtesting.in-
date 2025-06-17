@@ -32,4 +32,14 @@ public class LoginSteps extends PageSteps {
     public void displayErrorMessage() {
         LoginService.showErrorMessage();
     }
+
+    @When("Se clickea en Logout")
+    public void clickLogout() {
+        LoginService.clickSignOut();
+    }
+
+    @Then("Se redirige al usuario a la pantalla de login o registro")
+    public void validateLogout() {
+        LoginService.validateMyAccount();
+    }
 }

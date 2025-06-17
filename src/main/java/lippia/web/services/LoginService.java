@@ -26,4 +26,12 @@ public class LoginService {
         String errorText = ActionManager.getText(LoginConstants.LOGIN_ERROR_MESSAGE);
         Assert.assertTrue(errorText.contains("Error"));
     }
+
+    public static void clickSignOut() {
+        WebActionManager.waitClickable(LoginConstants.SIGN_OUT).click();
+    }
+
+    public static void validateMyAccount() {
+        WebActionManager.isVisible(LoginConstants.LOGIN_USERNAME_BOX);
+    }
 }

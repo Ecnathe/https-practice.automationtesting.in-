@@ -6,4 +6,5 @@ public class LoginConstants {
     public static final String LOGIN_PASSWORD_BOX ="xpath://Input[@id='password']";
     public static final String LOGIN_BUTTON = "xpath://input[@value='Login']";
     public static final String LOGIN_ERROR_MESSAGE = "xpath://ul[@class='woocommerce-error']";
+    public static final String SIGN_OUT = "xpath://a[text()='Sign out']";
     }
