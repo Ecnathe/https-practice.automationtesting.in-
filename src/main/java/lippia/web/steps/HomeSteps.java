@@ -69,5 +69,6 @@ public class HomeSteps extends PageSteps {
 
     @Then("Se podra visualizar la pagina con los detalles de la compra.")
     public void confirmOrderDetails() {
+        HomeService.orderReceived();
     }
 }

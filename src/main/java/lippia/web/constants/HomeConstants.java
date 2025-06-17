@@ -30,6 +30,6 @@ public class HomeConstants {
     public static final String POSTCODE = "xpath://*[@id='billing_postcode']";
     //Dropdown Formulario
     public static final String COUNTRY_INPUT = "xpath://*[@id='s2id_autogen1_search']";
-    public static final String STATE_INPUT = "xpath:/html/body/div[5]/div/input";
+    public static final String STATE_INPUT = "xpath://*[@id='s2id_autogen2_search']";
 
 }
