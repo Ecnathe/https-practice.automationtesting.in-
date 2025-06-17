@@ -4,6 +4,7 @@ import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.*;
+import lippia.web.constants.HomeConstants;
 import lippia.web.services.HomeService;
 
 public class HomeSteps extends PageSteps {
@@ -54,5 +55,19 @@ public class HomeSteps extends PageSteps {
     @And("Se valida que en la seccion Your order el Total sea mayor al Subtotal")
     public void compareTotalAndSubtotal() {
         HomeService.compareTotals();
+    }
+
+    @And("Se debera poder agregar un cupon en la seccion Have a coupon? en caso de tener uno")
+    public void selectCoupon() {
+        HomeService.selectCoupon();
+    }
+
+    @And("Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order")
+    public void placeOrder() {
+        HomeService.placeOrder();
+    }
+
+    @Then("Se podra visualizar la pagina con los detalles de la compra.")
+    public void confirmOrderDetails() {
     }
 }
