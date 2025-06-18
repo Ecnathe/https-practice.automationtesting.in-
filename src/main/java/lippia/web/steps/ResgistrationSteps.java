@@ -20,7 +20,7 @@ public class ResgistrationSteps extends PageSteps {
         WebActionManager.waitClickable(RegistrationConstants.REGISTER_BUTTON).click();
     }
 
-    @Then("Se debe mostrar el mensaje de error correspondiente.")
+    @Then("Se debe mostrar el mensaje de error del registro.")
     public void displayErrorMessage() {
         RegistrationService.showErrorMessage();
     }
