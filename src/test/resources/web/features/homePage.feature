@@ -17,7 +17,7 @@ Feature: Home page
     When Se clickea la imagen del arrival en la posicion '1'
     Then Se visualizan los detalles producto seleccionado
 
-  @arrivalsAddToCart @Smoke
+  @arrivalsAddToCart @Smoke @Do
   Scenario: Agregar items al carrito desde Arrivals y completar compra.
     When Se clickea la imagen del arrival en la posicion '1'
     And Se visualizan los detalles producto seleccionado

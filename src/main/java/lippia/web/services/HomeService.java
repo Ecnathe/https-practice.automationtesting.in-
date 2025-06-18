@@ -5,7 +5,9 @@ import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.HomeConstants;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import static com.crowdar.core.actions.ActionManager.getText;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 import static lippia.web.constants.HomeConstants.*;
@@ -75,7 +77,7 @@ public class HomeService {
         WebActionManager.waitVisibility(CHECKOUTCOUPON);
     }
 
-    public static void placeOrder() {
+    public static void placeOrder() throws InterruptedException {
         String[] camposInput = {
                 HomeConstants.FIRST_NAME,
                 HomeConstants.LAST_NAME,
@@ -121,10 +123,14 @@ public class HomeService {
             WebActionManager.getElement(dropdownInputs[i]).sendKeys(Keys.ENTER);
         }
 
-        WebActionManager.waitClickable(HomeConstants.CASH_ON_DELIVERY).click();
-        WebActionManager.waitClickable(HomeConstants.PLACE_ORDER_BUTTON).click();
+        Thread.sleep(3000);
+        WebActionManager.click(HomeConstants.CASH_ON_DELIVERY, true);
+        WebActionManager.click(HomeConstants.PLACE_ORDER_BUTTON, true);
     }
-    public static void orderReceived(){
-        WebActionManager.isVisible(HomeConstants.ORDER_DETAIL_RECEIVED);
+
+    public static void orderReceived() {
+        WebActionManager.waitVisibility(HomeConstants.ORDER_DETAIL_RECEIVED);
+        WebElement titulo = WebActionManager.getElement(HomeConstants.ORDER_DETAIL_RECEIVED);
+        Assert.assertTrue(titulo.isDisplayed(),"No se encuentra el elemento esperado");
     }
 }

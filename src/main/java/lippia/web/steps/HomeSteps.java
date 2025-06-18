@@ -60,7 +60,7 @@ public class HomeSteps extends PageSteps {
     }
 
     @When("Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order")
-    public void placeOrder() {
+    public void placeOrder() throws InterruptedException {
         HomeService.placeOrder();
     }
 
