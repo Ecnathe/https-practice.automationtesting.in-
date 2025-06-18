@@ -10,4 +10,6 @@ public class ShopConstants {
     public static final String ONSALE_MARK = "xpath://li/a/span[@class='onsale']";
     public static final String ACTUAL_SCRATCH_PRIZE = "xpath://*[@Class='summary entry-summary']/div/p/del";
     public static final String NEW_PRIZE = "xpath://*[@Class='summary entry-summary']/div/p/ins";
+    public static final String ADD_FROM_SHOP = "xpath://ul[@class='products masonry-done']/li[1]//a[contains(text(), 'Add to basket')]";
+    public static final String VIEW_CART = "xpath://li[@id='wpmenucartli']/a";
 }

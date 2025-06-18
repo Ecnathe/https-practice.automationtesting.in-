@@ -43,4 +43,19 @@ public class ShopService {
         Assert.assertTrue(WebActionManager.isVisible(ACTUAL_SCRATCH_PRIZE));
         Assert.assertTrue(WebActionManager.isVisible(NEW_PRIZE));
     }
+
+    public static void addFirstItemToBasketFromShop() {
+        WebActionManager.waitClickable(ShopConstants.ADD_FROM_SHOP).click();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        Assert.assertTrue(WebActionManager.isPresent("xpath://a[contains(@class, 'added') and contains(@class, 'button')]"), "El botón con clase 'added button' no está visible tras agregar al carrito.");
+    }
+
+    public static void clickViewBasket() {
+        WebActionManager.waitClickable(VIEW_CART).click();
+
+    }
 }

@@ -5,7 +5,7 @@ Feature: Registration
     Given Se ingresa a la web de practica
     And Se clickea en MyAccount en la barra de navegacion superior
 
-  @RegistroFallido @Smoke @Do
+  @RegistroFallido @Smoke
   Scenario Outline: Registro con credenciales invalidas por <credenciales>
     And En Username se ingresa el valor '<user>' y en Password el valor '<pass>'
     When Se hace click en el boton Register

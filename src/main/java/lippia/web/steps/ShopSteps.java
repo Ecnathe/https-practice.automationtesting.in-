@@ -1,8 +1,10 @@
 package lippia.web.steps;
+
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.*;
 import lippia.web.services.ShopService;
+
 import static lippia.web.constants.ShopConstants.*;
 
 
@@ -41,5 +43,15 @@ public class ShopSteps extends PageSteps {
     @Then("Se visualiza el precio antiguo tachado para los productos con esta etiqueta")
     public void verifyOldPrizeScratched() {
         ShopService.validateScratchedPrize();
+    }
+
+    @And("Se agrega al carrito el primer producto de la lista")
+    public void addProductToBasket() {
+        ShopService.addFirstItemToBasketFromShop();
+    }
+
+    @And("Se clickea en el boton View Basket que se hace visible luego de agregar el producto")
+    public void viewBasket() {
+        ShopService.clickViewBasket();
     }
 }

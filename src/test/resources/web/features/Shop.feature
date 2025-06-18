@@ -32,3 +32,8 @@ Feature: Shop
   Scenario: Validar descuento realizado en productos con la etiqueta 'On Sale'
     When Se clickea el primer producto con la etiqueta On Sale
     Then Se visualiza el precio antiguo tachado para los productos con esta etiqueta
+
+  @AddToBasket @Smoke @Do
+  Scenario: Add to basket
+    And Se agrega al carrito el primer producto de la lista
+    And Se clickea en el boton View Basket que se hace visible luego de agregar el producto
