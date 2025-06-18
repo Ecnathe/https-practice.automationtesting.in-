@@ -1,14 +1,17 @@
 package lippia.web.services;
+
 import com.crowdar.core.actions.WebActionManager;
 import lippia.web.constants.ShopConstants;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
 import java.util.List;
+
 import static lippia.web.constants.ShopConstants.*;
 
 public class ShopService {
 
-    public static List <WebElement> defaultList;
+    public static List<WebElement> defaultList;
 
     public static void clickOnCategory(String category) {
         WebActionManager.waitClickable(ShopConstants.PRODUCT_CATEGORY, category).click();
@@ -24,27 +27,32 @@ public class ShopService {
             }
         }
     }
-    public static void clickSortProductsDropDown (String sorted){
+
+    public static void clickSortProductsDropDown(String sorted) {
         defaultList = WebActionManager.getElements(ShopConstants.ITEM_CARDS);
         WebActionManager.waitClickable(ShopConstants.DROP_DOWN_SORT).click();
         WebActionManager.waitVisibility(ShopConstants.DROP_DOWN_OPTION, sorted).click();
     }
 
-    public static void compareList (){
+    public static void compareList() {
         List<WebElement> sortedList = WebActionManager.getElements(ShopConstants.ITEM_CARDS);
         Assert.assertNotEquals(defaultList, sortedList, "Las listas son identicas");
     }
 
     public static void clickProductOnSale() {
-       WebActionManager.waitClickable(ShopConstants.ONSALE_MARK).click();
+        WebActionManager.waitClickable(ShopConstants.ONSALE_MARK).click();
     }
 
     public static void validateScratchedPrize() {
         Assert.assertTrue(WebActionManager.isVisible(ACTUAL_SCRATCH_PRIZE));
         Assert.assertTrue(WebActionManager.isVisible(NEW_PRIZE));
     }
+    private static String productName;
+    private static String productPrice;
 
     public static void addFirstItemToBasketFromShop() {
+        productName = WebActionManager.getText(ShopConstants.PRODUCT_TITLE_SHOP);
+        productPrice = WebActionManager.getText(ShopConstants.PRODUCT_PRIZE_SHOP);
         WebActionManager.waitClickable(ShopConstants.ADD_FROM_SHOP).click();
         try {
             Thread.sleep(3000);
@@ -56,6 +64,7 @@ public class ShopService {
 
     public static void clickViewBasket() {
         WebActionManager.waitClickable(VIEW_CART).click();
-
+        Assert.assertEquals(WebActionManager.getText(PRODUCT_NAME_BASKET), productName,"El nombre del producto no coincide con el del carrito.");
+        Assert.assertEquals(WebActionManager.getText(PRODUCT_PRICE_BASKET), productPrice, "El precio del producto no coincide con el del carrito.");
     }
 }

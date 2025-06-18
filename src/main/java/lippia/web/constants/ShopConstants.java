@@ -11,5 +11,9 @@ public class ShopConstants {
     public static final String ACTUAL_SCRATCH_PRIZE = "xpath://*[@Class='summary entry-summary']/div/p/del";
     public static final String NEW_PRIZE = "xpath://*[@Class='summary entry-summary']/div/p/ins";
     public static final String ADD_FROM_SHOP = "xpath://ul[@class='products masonry-done']/li[1]//a[contains(text(), 'Add to basket')]";
+    public static final String PRODUCT_TITLE_SHOP = "xpath://ul[contains(@class, 'products')]/li[1]//h3";
+    public static final String PRODUCT_PRIZE_SHOP = "xpath://ul[contains(@class, 'products')]/li[1]//span[@class='price']//ins/span";
+    public static final String PRODUCT_NAME_BASKET = "xpath://td[@class='product-name']";
+    public static final String PRODUCT_PRICE_BASKET = "xpath://td[@class='product-price']";
     public static final String VIEW_CART = "xpath://li[@id='wpmenucartli']/a";
 }
