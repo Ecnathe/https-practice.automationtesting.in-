@@ -1,10 +1,7 @@
 package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
-import com.crowdar.core.actions.ActionManager;
-import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.*;
-import lippia.web.constants.HomeConstants;
 import lippia.web.services.HomeService;
 
 public class HomeSteps extends PageSteps {

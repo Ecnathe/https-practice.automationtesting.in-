@@ -31,7 +31,7 @@ Feature: Login
     When Se hace click en el boton Login
     Then Se debe mostrar el mensaje de error correspondiente.
 
-  @logOff @Smoke @Do
+  @logOff @Smoke
   Scenario: Cerrar sesion
     And En el campo Username se ingresa el valor 'pedro.pez@gmail.com' y en el campo Password el valor 'P3drQPez1'
     And Se hace click en el boton Login
