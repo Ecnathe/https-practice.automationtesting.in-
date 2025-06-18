@@ -15,9 +15,9 @@ public class HomeConstants {
     public static final String YOUR_ORDER_SUBTOTAL = "xpath://*[@class='cart-subtotal']//span[@class='woocommerce-Price-amount amount']";
     public static final String CLICK_ADD_COUPON = "xpath://div[@id='page-35']//a[@class='showcoupon']";
     public static final String CHECKOUTCOUPON = "xpath://form[@class='checkout_coupon']";
-    public static final String PLACE_ORDER_BUTTON = "xpath://*[@id='place_order']";
-    public static final String CASH_ON_DELIVERY = "xpath://*[@id='payment_method_cod']";
-    public static final String ORDER_DETAIL_RECEIVED = "xpath://*[@id='page-35']//h2[text() = 'Order Details']";
+    public static final String PLACE_ORDER_BUTTON = "xpath://input[@id='place_order']";
+    public static final String CASH_ON_DELIVERY = "xpath://label[contains(text(), 'Cash on Delivery')]";
+    public static final String ORDER_DETAIL_RECEIVED = "xpath://h2";
     //Fromulario checkout
     public static final String FIRST_NAME = "xpath://*[@id='billing_first_name']";
     public static final String LAST_NAME = "xpath://*[@id='billing_last_name']";

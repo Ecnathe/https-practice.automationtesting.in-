@@ -59,7 +59,7 @@ public class HomeSteps extends PageSteps {
         HomeService.selectCoupon();
     }
 
-    @And("Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order")
+    @When("Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order")
     public void placeOrder() {
         HomeService.placeOrder();
     }

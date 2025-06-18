@@ -33,7 +33,27 @@ Feature: Shop
     When Se clickea el primer producto con la etiqueta On Sale
     Then Se visualiza el precio antiguo tachado para los productos con esta etiqueta
 
-  @AddToBasket @Smoke @Do
+  @AddToBasket @Smoke
   Scenario: Add to basket
     And Se agrega al carrito el primer producto de la lista
     And Se clickea en el boton View Basket que se hace visible luego de agregar el producto
+    And Se selecciona el boton Proceed to Checkout
+    And Se valida que en la seccion Your order el Total sea mayor al Subtotal
+    When Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order
+    Then Se podra visualizar la pagina con los detalles de la compra.
+
+  @TaxFunction @Smoke @Do
+  Scenario Outline: Validar calculo de impuestos segun pais de origen de la compra
+    And Se agrega al carrito el primer producto de la lista
+    And Se clickea en el boton View Basket que se hace visible luego de agregar el producto
+    And Se selecciona el boton Proceed to Checkout
+    When Se selecciona el pais <Pais> en el desplegable Country
+    Then Se debe visualizar un monto equivalente <Tax> del valor total del producto seleccionado
+
+    Examples:
+      | Pais      | Tax |
+      | India     | 2%  |
+      | Argentina | 5%  |
+      | Honduras  | 5%  |
+      | Germany   | 5%  |
+      | Japan     | 5%  |

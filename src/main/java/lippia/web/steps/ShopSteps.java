@@ -3,6 +3,7 @@ package lippia.web.steps;
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.WebActionManager;
 import io.cucumber.java.en.*;
+import lippia.web.services.HomeService;
 import lippia.web.services.ShopService;
 
 import static lippia.web.constants.ShopConstants.*;
@@ -53,5 +54,15 @@ public class ShopSteps extends PageSteps {
     @And("Se clickea en el boton View Basket que se hace visible luego de agregar el producto")
     public void viewBasket() {
         ShopService.clickViewBasket();
+    }
+
+    @When("Se selecciona el pais (.*) en el desplegable Country$")
+    public void selectCountryDropdown(String Country) {
+        ShopService.selectCountry(Country);
+    }
+
+    @Then("Se debe visualizar un monto equivalente (.*) del valor total del producto seleccionado$")
+    public void validateTaxAmount(String expectedTaxPercent) {
+        ShopService.validarImpuesto(expectedTaxPercent);
     }
 }

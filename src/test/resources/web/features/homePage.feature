@@ -26,7 +26,7 @@ Feature: Home page
     And Se selecciona el boton Proceed to Checkout
     And Se valida que en la seccion Your order el Total sea mayor al Subtotal
     And Se debera poder agregar un cupon en la seccion Have a coupon? en caso de tener uno
-    And Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order
+    When Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order
     Then Se podra visualizar la pagina con los detalles de la compra.
 
 
