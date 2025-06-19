@@ -51,6 +51,6 @@ public class LoginSteps extends PageSteps {
 
     @Then("El usuario no debe estar logueado en su cuenta")
     public void validateSignOut() {
-
+        LoginService.validateSignOut();
     }
 }
