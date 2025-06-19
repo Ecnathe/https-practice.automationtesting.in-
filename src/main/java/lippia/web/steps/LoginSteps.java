@@ -2,6 +2,7 @@ package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.WebActionManager;
+import com.crowdar.driver.DriverManager;
 import io.cucumber.java.en.*;
 import lippia.web.constants.LoginConstants;
 import lippia.web.services.LoginService;
@@ -41,5 +42,15 @@ public class LoginSteps extends PageSteps {
     @Then("Se redirige al usuario a la pantalla de login o registro")
     public void validateLogout() {
         LoginService.validateMyAccount();
+    }
+
+    @And("Se presiona el boton back del navegador")
+    public void pressBackButton() {
+        LoginService.clickBackButton();
+    }
+
+    @Then("El usuario no debe estar logueado en su cuenta")
+    public void validateSignOut() {
+
     }
 }

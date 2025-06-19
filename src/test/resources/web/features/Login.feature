@@ -31,4 +31,6 @@ Feature: Login
     And Se hace click en el boton Login
     And Redirige al usuario al Dashboard
     When Se clickea en Logout
-    Then Se redirige al usuario a la pantalla de login o registro
+    And Se redirige al usuario a la pantalla de login o registro
+    And Se presiona el boton back del navegador
+    Then El usuario no debe estar logueado en su cuenta

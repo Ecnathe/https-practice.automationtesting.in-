@@ -42,7 +42,7 @@ Feature: Shop
     When Se completan los campos del formulario Billing Details, se selecciona el metodo de pago y se hace click en Place Order
     Then Se podra visualizar la pagina con los detalles de la compra.
 
-  @TaxFunction @Smoke @Do
+  @TaxFunction @Smoke
   Scenario Outline: Validar calculo de impuestos segun pais de origen de la compra
     And Se agrega al carrito el primer producto de la lista
     And Se clickea en el boton View Basket que se hace visible luego de agregar el producto

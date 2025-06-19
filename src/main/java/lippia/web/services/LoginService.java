@@ -34,4 +34,12 @@ public class LoginService {
     public static void validateMyAccount() {
         WebActionManager.isVisible(LoginConstants.LOGIN_USERNAME_BOX);
     }
+
+    public static void clickBackButton() {
+        DriverManager.getDriverInstance().getWrappedDriver().navigate().back();
+    }
+
+    public static void validateSignOut() {
+        Assert.assertTrue(WebActionManager.isVisible(LoginConstants.LOGIN_USERNAME_BOX), "El campo de usuario no se encuentra en el DOM de la página.");
+    }
 }
