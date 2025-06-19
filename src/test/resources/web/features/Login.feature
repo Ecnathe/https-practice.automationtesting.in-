@@ -18,12 +18,12 @@ Feature: Login
     Then Se debe mostrar el mensaje de error correspondiente.
 
     Examples:
-      | user                | pass      | credenciales               |
-      | pedro.pqz@gmail.com | P6drQPez1 | Mail y Pass incorrectas    |
-      | pedro.paz@gmail.com |           | Mail correcto y Pass vacio |
-      |                     | P3drQPez1 | Mail vacio y Pass correcta |
-      |                     |           | Mail y Pass vacio          |
-      | Pedro.pez@gmail.com | p3drQPez1 | Case sensitive             |
+      | user                 | pass      | credenciales               |
+      | pedro.pqqz@gmail.com | P6drQPez1 | Mail y Pass incorrectas    |
+      | pedro.paz@gmail.com  |           | Mail correcto y Pass vacio |
+      |                      | P3drQPez1 | Mail vacio y Pass correcta |
+      |                      |           | Mail y Pass vacio          |
+      | Pedro.pez@gmail.com  | p3drQPez1 | Case sensitive             |
 
   @logOff @Smoke
   Scenario: Cerrar sesion
