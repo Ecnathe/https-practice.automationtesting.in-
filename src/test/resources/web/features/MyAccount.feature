@@ -11,5 +11,6 @@ Feature: Login
     And Se hace click en el boton Login
     And Redirige al usuario al Dashboard
     When Se clickea en Account Details
+    Then Se pueden visualizar los detalles de la cuenta y la posibilidad de cambiar contraseña
 
 

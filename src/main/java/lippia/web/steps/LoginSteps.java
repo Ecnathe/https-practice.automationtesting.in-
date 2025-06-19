@@ -2,7 +2,6 @@ package lippia.web.steps;
 
 import com.crowdar.core.PageSteps;
 import com.crowdar.core.actions.WebActionManager;
-import com.crowdar.driver.DriverManager;
 import io.cucumber.java.en.*;
 import lippia.web.constants.LoginConstants;
 import lippia.web.services.LoginService;
