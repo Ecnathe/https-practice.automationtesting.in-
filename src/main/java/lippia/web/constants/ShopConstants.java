@@ -16,8 +16,7 @@ public class ShopConstants {
     public static final String PRODUCT_NAME_BASKET = "xpath://td[@class='product-name']";
     public static final String PRODUCT_PRICE_BASKET = "xpath://td[@class='product-price']";
     public static final String VIEW_CART = "xpath://li[@id='wpmenucartli']/a";
-    public static final String TAX_AMOUNT = "xpath://tr[@class='tax-rate tax-rate-roaming-tax-1']/td";
-
-            //;"//tr[@class='tax-rate tax-rate-in-tax-1']//span[@class='woocommerce-Price-amount amount']"
+    public static final String TAX_AMOUNT = "xpath:(//span[@class= 'woocommerce-Price-amount amount'])[3]";
+    public static final String REMOVE_FROM_CART = "xpath://a[@title='Remove this item']";
 
 }

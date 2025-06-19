@@ -62,7 +62,8 @@ public class ShopSteps extends PageSteps {
     }
 
     @Then("Se debe visualizar un monto equivalente (.*) del valor total del producto seleccionado$")
-    public void validateTaxAmount(String expectedTaxPercent) {
+    public void validateTaxAmount(String expectedTaxPercent) throws InterruptedException {
         ShopService.validarImpuesto(expectedTaxPercent);
+        ShopService.resetCart();
     }
 }

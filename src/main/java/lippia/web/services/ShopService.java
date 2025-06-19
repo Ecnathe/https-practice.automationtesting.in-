@@ -2,6 +2,7 @@ package lippia.web.services;
 
 import com.crowdar.core.actions.ActionManager;
 import com.crowdar.core.actions.WebActionManager;
+import com.crowdar.driver.DriverManager;
 import lippia.web.constants.HomeConstants;
 import lippia.web.constants.ShopConstants;
 import org.openqa.selenium.Keys;
@@ -75,15 +76,16 @@ public class ShopService {
     public static void selectCountry(String Country) {
         WebActionManager.waitClickable(HomeConstants.COUNTRY).click();
         WebActionManager.getElement(HomeConstants.COUNTRY_INPUT).sendKeys(Country);
-        WebActionManager.getElement(HomeConstants.COUNTRY_INPUT).sendKeys(Keys.ENTER);
+        if (Country.equals("India")) {
+            WebActionManager.getElement(HomeConstants.COUNTRY_INPUT).sendKeys(Keys.ARROW_DOWN);
+            WebActionManager.getElement(HomeConstants.COUNTRY_INPUT).sendKeys(Keys.ENTER);
+        } else {
+            WebActionManager.getElement(HomeConstants.COUNTRY_INPUT).sendKeys(Keys.ENTER);
+        }
     }
 
-    public static void validarImpuesto(String expectedTaxPercent) {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
+    public static void validarImpuesto(String expectedTaxPercent) throws InterruptedException {
+        Thread.sleep(3000);
         String taxText = WebActionManager.getText(ShopConstants.TAX_AMOUNT);
         System.out.println("Impuesto visible: " + taxText);
 
@@ -98,6 +100,14 @@ public class ShopService {
         System.out.println("Impuesto esperado (" + expectedTaxPercent + "): " + expectedTaxValue);
 
         Assert.assertEquals(taxValueVisible, expectedTaxValue, 0.01, "El impuesto no coincide con lo esperado.");
+    }
+
+    public static void resetCart() {
+        DriverManager.getDriverInstance().getWrappedDriver().navigate().back();
+        List<WebElement> remove = WebActionManager.getElements(REMOVE_FROM_CART);
+        for (WebElement item : remove) {
+            item.click();
+        }
     }
 
 }
