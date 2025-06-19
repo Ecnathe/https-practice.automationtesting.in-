@@ -16,4 +16,3 @@ Feature: Registration
       | alberto.paz@gmail.com |           | Mail correcto y Pass vacio |
       |                       |           | Mail y Pass vacio          |
       |                       | P3drQPez1 | Mail vacio y Pass correcta |
-      #| alberto.pezqgmail.com | P6drQPez1 | Mail incorrecto            |
