@@ -7,15 +7,11 @@ import lippia.web.constants.HomeConstants;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import static com.crowdar.core.actions.ActionManager.getText;
 import static com.crowdar.core.actions.WebActionManager.navigateTo;
 import static lippia.web.constants.HomeConstants.*;
-
 import com.crowdar.driver.DriverManager;
 
-import javax.swing.*;
-import java.awt.*;
 
 public class HomeService {
     private static String ArrivalTitle;
